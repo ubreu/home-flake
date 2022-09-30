@@ -99,6 +99,39 @@
             ".tmp"
             "*~"
             ".DS_Store"
+            ".vscode/*"
+            "!.vscode/settings.json"
+            "!.vscode/tasks.json"
+            "!.vscode/launch.json"
+            "!.vscode/extensions.json"
+            "!.vscode/*.code-snippets"
+            ".history/"
+            ".idea/**/workspace.xml"
+            ".idea/**/tasks.xml"
+            ".idea/**/usage.statistics.xml"
+            ".idea/**/dictionaries"
+            ".idea/**/shelf"
+            ".idea/**/dataSources/"
+            ".idea/**/dataSources.ids"
+            ".idea/**/dataSources.local.xml"
+            ".idea/**/sqlDataSources.xml"
+            ".idea/**/dynamic.xml"
+            ".idea/**/uiDesigner.xml"
+            ".idea/**/dbnavigator.xml"
+            ".idea/**/gradle.xml"
+            ".idea/**/libraries"
         ];
+        aliases = {
+            what = "log --author=urs --pretty=format:'%h - %an, %>(14)%ar : %s'";
+            releasenotes = "log --date=short --pretty=format:'%h | %<(15,trunc)%an | %ad | %<(100,trunc)%s'";
+            ci = "commit";
+	        co = "checkout";
+            df = "diff";
+            dc = "diff --cached";
+            lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
+            ls = "log --pretty=format:%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative";
+            ll = "log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [a:%an,c:%cn] --decorate --numstat";
+            st = "status";
+        };
     };
 }
