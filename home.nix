@@ -92,6 +92,7 @@
     programs.git = {
         enable = true;
         userName = "Urs Breu";
+        userEmail = "urs.breu@ergon.ch";
         delta.enable = true;
         delta.options = {dark = true;};
         ignores = [
