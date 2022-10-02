@@ -1,5 +1,5 @@
 {
-  description = "darwin system";
+  description = "home flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -14,12 +14,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [ ./home.nix ];
     };
-
-   in
-    {
-    #defaultPackage.${system} = nixpkgs.legacyPackages.${system}.hello;
+  in {
     defaultPackage.${system} = ubreu.activationPackage;
-    #packages."$system".default = self.homeConfigurations."ubreu".activationPackage;
-    #packages.${system}.default = nixpkgs.legacyPackages.${system}.hello;
   };
 }
