@@ -3,6 +3,8 @@
     home.homeDirectory = "/Users/ubreu";
     home.stateVersion = "22.05";
     
+    home.packages = with pkgs; [];
+
     programs.home-manager.enable = true;
 
     programs.zsh = {
@@ -19,6 +21,7 @@
         };
 
         shellAliases = {
+            b="bazel";
             burp="brew update && brew upgrade --greedy";
             c="code";
             cp="cp -i";
