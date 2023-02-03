@@ -3,7 +3,14 @@
 This project contains the flake for installing home manager and the configuration it manages for my home directory.
 See https://nixos.wiki/wiki/Home_Manager
 
-Activate the configuration by running:
+Activate the configuration by either running:
 ```console
+nix run github:ubreu/home-flake
+```
+
+or:
+```console
+git@github.com:ubreu/home-flake.git
+cd home-flake
 nix run . switch
 ```
