@@ -3,7 +3,14 @@
     home.homeDirectory = "/Users/ubreu";
     home.stateVersion = "22.05";
     
-    home.packages = with pkgs; [];
+    home.packages = with pkgs; [
+        azure-cli
+        jq
+        kubectl
+        kubectx
+        ripgrep
+        tree
+    ];
 
     programs.home-manager.enable = true;
 
