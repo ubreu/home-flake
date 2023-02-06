@@ -24,13 +24,11 @@
             COPYFILE_DISABLE=true;
             LANG="en_US.UTF-8";
             LC_ALL="en_US.UTF-8";
-            NVM_DIR="~/.nvm";
         };
 
         shellAliases = {
-            b="bazel";
             burp="brew update && brew upgrade --greedy";
-            c="code";
+            c="/Applications/Visual\\ Studio\\ Code.app/Contents/Resources/app/bin/code";
             cp="cp -i";
             d="docker";
             dl="cd ~/Downloads/;ls -latr";
@@ -72,9 +70,11 @@
             nc -w 5 -v localhost $1 </dev/null; echo $?
         }
 
-        source $(brew --prefix nvm)/nvm.sh
         source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
         export PATH="/nix/var/nix/profiles/default/bin:$PATH"
+        # Set PATH, MANPATH, etc., for Homebrew.
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+
         '';
 
         oh-my-zsh = {
