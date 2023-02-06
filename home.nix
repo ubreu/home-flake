@@ -46,7 +46,7 @@
             mount-projects="open smb://fsprojects/projects";
             mount-pd="open smb://fspd/pd";
             mv="mv -i";
-            nocors="open /Applications/Google\ Chrome.app -n --args --user-data-dir=`mktemp -d` --disable-web-security";
+            nocors="open /Applications/Google\\ Chrome.app -n --args --user-data-dir=`mktemp -d` --disable-web-security";
             sha1sum="shasum";
             sn="spotify next";
             ss="spotify status";
