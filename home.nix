@@ -5,11 +5,13 @@
     
     home.packages = with pkgs; [
         azure-cli
+        du-dust
+        exa
+        gitui
         jq
         kubectl
         kubectx
         ripgrep
-        tree
     ];
 
     programs.home-manager.enable = true;
@@ -31,15 +33,15 @@
             c="/Applications/Visual\\ Studio\\ Code.app/Contents/Resources/app/bin/code";
             cp="cp -i";
             d="docker";
-            dl="cd ~/Downloads/;ls -latr";
-            dk="cd ~/Desktop/;ls -latr";
+            dl="cd ~/Downloads/;exa --long --git";
+            dk="cd ~/Desktop/;exa --long --git";
             d2t="date +%s";
             gitclean="git branch --merged $(git rev-parse --abbrev-ref HEAD) | grep -v $(git rev-parse --abbrev-ref HEAD) | grep -v master | xargs -n1 git branch -d";
             hg="history | rg -N";
             k="kubectl --insecure-skip-tls-verify";
             kc="kubectl config";
-            l="ls -la";
-            lt="ls -latr";
+            l="exa --long --git";
+            lt="exa --long --git --sort=newest";
             mount-home="open smb://fshome/home";
             mount-data="open smb://fsdata/data";
             mount-docs="open smb://fsdocs/docs";
