@@ -30,7 +30,7 @@
         };
 
         shellAliases = {
-            burp="brew update && brew upgrade --greedy";
+            burp="brew update && brew upgrade";
             c="/Applications/Visual\\ Studio\\ Code.app/Contents/Resources/app/bin/code";
             cp="cp -i";
             d="docker";
