@@ -12,6 +12,7 @@
         kubectl
         kubectx
         ripgrep
+        unixtools.watch
     ];
 
     programs.home-manager.enable = true;
