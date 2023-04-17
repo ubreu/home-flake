@@ -41,8 +41,8 @@
             hg="history | rg -N";
             k="kubectl --insecure-skip-tls-verify";
             kc="kubectl config";
-            l="exa --long --git";
-            lt="exa --long --git --sort=newest";
+            l="exa -a --long --git";
+            lt="exa -a --long --git --sort=newest";
             mount-home="open smb://fshome/home";
             mount-data="open smb://fsdata/data";
             mount-docs="open smb://fsdocs/docs";
@@ -56,6 +56,7 @@
             sp="spotify pause";
             stree="/Applications/SourceTree.app/Contents/Resources/stree";
             t2d="date -j -f %s";
+            tree='exa -a --tree';
         };
 
         initExtra = ''
