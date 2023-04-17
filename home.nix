@@ -56,7 +56,7 @@
             sp="spotify pause";
             stree="/Applications/SourceTree.app/Contents/Resources/stree";
             t2d="date -j -f %s";
-            tree='exa -a --tree';
+            tree="exa -a --tree";
         };
 
         initExtra = ''
