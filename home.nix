@@ -11,6 +11,7 @@
         jq
         kubectl
         kubectx
+        kubelogin
         ripgrep
         unixtools.watch
     ];
