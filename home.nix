@@ -1,11 +1,11 @@
 {pkgs, lib, config, ...}: with lib; {
     home.username = "ubreu";
     home.homeDirectory = "/Users/ubreu";
-    home.stateVersion = "22.05";
+    home.stateVersion = "23.05";
     
     home.packages = with pkgs; [
         du-dust
-        exa
+        eza
         jq
         ripgrep
         unixtools.watch
@@ -16,7 +16,7 @@
     programs.zsh = {
         enable = true;
         enableCompletion = true;
-        enableAutosuggestions = true;
+        autosuggestion.enable = true;
 
         sessionVariables = {
             EDITOR = "vim";
@@ -30,15 +30,15 @@
             c="/Applications/Visual\\ Studio\\ Code.app/Contents/Resources/app/bin/code";
             cp="cp -i";
             d="docker";
-            dl="cd ~/Downloads/;exa --long --git";
-            dk="cd ~/Desktop/;exa --long --git";
+            dl="cd ~/Downloads/;eza --long --git";
+            dk="cd ~/Desktop/;eza --long --git";
             d2t="date +%s";
             gitclean="git branch --merged $(git rev-parse --abbrev-ref HEAD) | grep -v $(git rev-parse --abbrev-ref HEAD) | grep -v master | xargs -n1 git branch -d";
             hg="history | rg -N";
             k="kubectl --insecure-skip-tls-verify";
             kc="kubectl config";
-            l="exa -a --long --git";
-            lt="exa -a --long --git --sort=newest";
+            l="eza -a --long --git";
+            lt="eza -a --long --git --sort=newest";
             mount-home="open smb://fshome/home";
             mount-data="open smb://fsdata/data";
             mount-docs="open smb://fsdocs/docs";
@@ -52,7 +52,7 @@
             sp="spotify pause";
             stree="/Applications/SourceTree.app/Contents/Resources/stree";
             t2d="date -j -f %s";
-            tree="exa -a --tree";
+            tree="eza -a --tree";
         };
 
         initExtra = ''
