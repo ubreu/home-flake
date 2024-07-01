@@ -4,14 +4,9 @@
     home.stateVersion = "22.05";
     
     home.packages = with pkgs; [
-        azure-cli
         du-dust
         exa
-        gitui
         jq
-        kubectl
-        kubectx
-        kubelogin
         ripgrep
         unixtools.watch
     ];
