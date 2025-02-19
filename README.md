@@ -14,3 +14,10 @@ git@github.com:ubreu/home-flake.git
 cd home-flake
 nix run . switch
 ```
+
+## Updating nixpkgs and home-manager
+
+```console
+nix flake update
+nix run . switch
+```

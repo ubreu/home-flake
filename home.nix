@@ -1,7 +1,7 @@
 {pkgs, lib, config, ...}: with lib; {
     home.username = "ubreu";
     home.homeDirectory = "/Users/ubreu";
-    home.stateVersion = "23.05";
+    home.stateVersion = "24.11";
     
     home.packages = with pkgs; [
         du-dust
