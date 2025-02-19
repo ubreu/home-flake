@@ -35,8 +35,6 @@
             d2t="date +%s";
             gitclean="git branch --merged $(git rev-parse --abbrev-ref HEAD) | grep -v $(git rev-parse --abbrev-ref HEAD) | grep -v master | xargs -n1 git branch -d";
             hg="history | rg -N";
-            k="kubectl --insecure-skip-tls-verify";
-            kc="kubectl config";
             l="eza -a --long --git";
             lt="eza -a --long --git --sort=newest";
             mount-home="open smb://fshome/home";
@@ -56,22 +54,9 @@
         };
 
         initExtra = ''
-        jdk() {
-            version=$1
-            export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-            java -version
-        }
-
-        function dlog () {
-            command grep -i $1 ~/Documents/logbooks/ -r | sort
-        }
-
-        function conn () {
-            nc -w 5 -v localhost $1 </dev/null; echo $?
-        }
 
         source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
-        export PATH="/nix/var/nix/profiles/default/bin:$PATH"
+        export PATH="/nix/var/nix/profiles/default/bin:/Users/ubreu/.rd/bin:$PATH"
         # Set PATH, MANPATH, etc., for Homebrew.
         eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -79,7 +64,7 @@
 
         oh-my-zsh = {
             enable = true;
-            plugins = ["git" "sudo" "docker" "kubectl" "macos" "wd"];
+            plugins = ["git" "sudo" "macos" "wd"];
             theme = "af-magic";
         };
     };
