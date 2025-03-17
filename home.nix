@@ -119,6 +119,7 @@
             ".idea/**/gradle.xml"
             ".idea/**/libraries"
         ];
+        lfs.enable = true;
         aliases = {
             what = "log --author=urs --pretty=format:'%h - %an, %>(14)%ar : %s'";
             releasenotes = "log --date=short --pretty=format:'%h | %<(15,trunc)%an | %ad | %<(100,trunc)%s'";
