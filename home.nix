@@ -29,6 +29,7 @@
             burp="brew update && brew upgrade";
             c="/Applications/Visual\\ Studio\\ Code.app/Contents/Resources/app/bin/code";
             cp="cp -i";
+            cai="/Applications/Cursor.app/Contents/Resources/app/bin/cursor";
             d="docker";
             dl="cd ~/Downloads/;eza --long --git";
             dk="cd ~/Desktop/;eza --long --git";
