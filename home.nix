@@ -33,9 +33,9 @@
             d="docker";
             dl="cd ~/Downloads/;eza --long --git";
             dk="cd ~/Desktop/;eza --long --git";
-            d2t="date +%s";
             gitclean="git branch --merged $(git rev-parse --abbrev-ref HEAD) | grep -v $(git rev-parse --abbrev-ref HEAD) | grep -v master | xargs -n1 git branch -d";
             hg="history | rg -N";
+            hmSwitch = "(nix build . && ./result/activate) && source ~/.zshrc";
             l="eza -a --long --git";
             lt="eza -a --long --git --sort=newest";
             mount-home="open smb://fshome/home";
@@ -50,12 +50,11 @@
             ss="spotify status";
             sp="spotify pause";
             stree="/Applications/SourceTree.app/Contents/Resources/stree";
-            t2d="date -j -f %s";
             tree="eza -a --tree";
         };
 
-        initExtra = ''
-
+        initContent = ''
+        
         source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
         export PATH="/nix/var/nix/profiles/default/bin:/Users/ubreu/.rd/bin:$PATH"
         # Set PATH, MANPATH, etc., for Homebrew.
@@ -88,10 +87,26 @@
 
     programs.git = {
         enable = true;
-        userName = "Urs Breu";
-        userEmail = "urs.breu@ergon.ch";
-        delta.enable = true;
-        delta.options = {dark = true;};
+
+        settings = {
+            aliases = {
+                what = "log --author=urs --pretty=format:'%h - %an, %>(14)%ar : %s'";
+                releasenotes = "log --date=short --pretty=format:'%h | %<(15,trunc)%an | %ad | %<(100,trunc)%s'";
+                ci = "commit";
+                co = "checkout";
+                df = "diff";
+                dc = "diff --cached";
+                lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
+                ls = "log --pretty=format:%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative";
+                ll = "log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [a:%an,c:%cn] --decorate --numstat";
+                st = "status";
+            };
+            user = {
+                name = "Urs Breu";
+                email = "urs.breu@ergon.ch";
+            };
+        };
+
         ignores = [
             ".old"
             ".tmp"
@@ -120,17 +135,11 @@
             ".idea/**/libraries"
         ];
         lfs.enable = true;
-        aliases = {
-            what = "log --author=urs --pretty=format:'%h - %an, %>(14)%ar : %s'";
-            releasenotes = "log --date=short --pretty=format:'%h | %<(15,trunc)%an | %ad | %<(100,trunc)%s'";
-            ci = "commit";
-	        co = "checkout";
-            df = "diff";
-            dc = "diff --cached";
-            lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
-            ls = "log --pretty=format:%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%an] --decorate --date=relative";
-            ll = "log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [a:%an,c:%cn] --decorate --numstat";
-            st = "status";
-        };
+    };
+
+    programs.delta = {
+        enable = true;
+        enableGitIntegration = true;
+        options = {dark = true;};
     };
 }
