@@ -4,7 +4,7 @@
     home.stateVersion = "24.11";
     
     home.packages = with pkgs; [
-        du-dust
+        dust
         eza
         jq
         ripgrep
