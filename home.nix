@@ -7,6 +7,7 @@
         dust
         eza
         jq
+        plantuml-c4
         ripgrep
         unixtools.watch
     ];
