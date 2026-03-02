@@ -144,4 +144,6 @@
         enableGitIntegration = true;
         options = {dark = true;};
     };
+
+    programs.uv.enable = true;
 }
