@@ -4,6 +4,7 @@
     home.stateVersion = "24.11";
     
     home.packages = with pkgs; [
+        _1password-cli
         dust
         eza
         jq
@@ -36,7 +37,7 @@
             dk="cd ~/Desktop/;eza --long --git";
             gitclean="git branch --merged $(git rev-parse --abbrev-ref HEAD) | grep -v $(git rev-parse --abbrev-ref HEAD) | grep -v master | xargs -n1 git branch -d";
             hg="history | rg -N";
-            hmSwitch = "(nix build . && ./result/activate) && source ~/.zshrc";
+            hmSwitch = "(export NIXPKGS_ALLOW_UNFREE=1 && nix build --impure . && ./result/activate) && source ~/.zshrc";
             l="eza -a --long --git";
             lt="eza -a --long --git --sort=newest";
             mount-home="open smb://fshome/home";
