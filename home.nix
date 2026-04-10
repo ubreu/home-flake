@@ -1,7 +1,7 @@
 {pkgs, lib, config, ...}: with lib; {
     home.username = "ubreu";
     home.homeDirectory = "/Users/ubreu";
-    home.stateVersion = "24.11";
+    home.stateVersion = "25.05";
     
     home.packages = with pkgs; [
         _1password-cli
