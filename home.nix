@@ -25,6 +25,7 @@
             COPYFILE_DISABLE=true;
             LANG="en_US.UTF-8";
             LC_ALL="en_US.UTF-8";
+            HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1;
         };
 
         shellAliases = {
