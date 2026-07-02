@@ -36,7 +36,7 @@
             d="docker";
             dl="cd ~/Downloads/;eza --long --git";
             dk="cd ~/Desktop/;eza --long --git";
-            gitclean="git branch --merged $(git rev-parse --abbrev-ref HEAD) | grep -vE '^[* ]+(main|master|release/[0-9]+\\.[0-9]+)$' | grep -v $(git rev-parse --abbrev-ref HEAD) | xargs -n1 git branch -d";
+            gitclean="git branch --merged $(git rev-parse --abbrev-ref HEAD) | grep -vE '^[* ]+(main|master|release(/.*)?)$' | grep -v $(git rev-parse --abbrev-ref HEAD) | xargs -n1 git branch -d";
             hg="history | rg -N";
             hmSwitch = "(export NIXPKGS_ALLOW_UNFREE=1 && nix build --impure . && ./result/activate) && source ~/.zshrc";
             l="eza -a --long --git";
